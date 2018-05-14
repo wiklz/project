@@ -2,6 +2,9 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  modules: [
+    'bootstrap-vue/nuxt'
+  ],
   head: {
     title: 'git-project',
     meta: [

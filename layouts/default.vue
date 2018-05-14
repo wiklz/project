@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div id="menu">
+
+    </div>
     <nuxt/>
   </div>
 </template>

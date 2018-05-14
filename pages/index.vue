@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <h1>NuxtJs</h1>
-    <h3>wiklz</h3>
+    <h3>by wiklz</h3>
   </section>
 </template>
 
