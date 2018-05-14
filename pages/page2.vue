@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <h1>Главная</h1>
+    <h1>Тут будет галерея</h1>
   </section>
 </template>
 
@@ -8,6 +8,7 @@
 
 
   export default {
+    name: 'page2',
     components: {
 
     }
