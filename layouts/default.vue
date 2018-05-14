@@ -13,6 +13,7 @@
     <div class="header">
       <h1>Brigadir</h1>
       <h3>Lorem ipsum dolor sit amet.</h3>
+      <h6>holy shit</h6>
     </div>
     <nuxt/>
   </div>
