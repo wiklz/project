@@ -3,8 +3,10 @@ module.exports = {
   ** Headers of the page
   */
   modules: [
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+
   ],
+  plugins: [{ src: '~plugins/vue-carousel', ssr: false }],
   head: {
     title: 'git-project',
     meta: [
