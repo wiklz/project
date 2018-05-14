@@ -1,6 +1,7 @@
 <template>
   <section class="container">
-    <h1>Главная</h1>
+    <h1 class="m-auto">Главная</h1>
+    <p>Тут будет главная страница с каруселями и шлюхами</p>
   </section>
 </template>
 
@@ -14,7 +15,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .container {
     display: flex;
     flex-direction: column;

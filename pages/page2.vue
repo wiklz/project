@@ -1,6 +1,7 @@
 <template>
   <section class="container">
     <h1>Тут будет галерея</h1>
+    <p>А тут будут фотки тех самых ... Каруселей</p>
   </section>
 </template>
 
@@ -15,7 +16,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .container {
     display: flex;
     flex-direction: column;
