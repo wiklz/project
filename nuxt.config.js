@@ -1,14 +1,12 @@
 module.exports = {
+  modules: [
+    'bootstrap-vue/nuxt',
+  ],
   /*
   ** Headers of the page
   */
-  modules: [
-    'bootstrap-vue/nuxt',
-
-  ],
-  plugins: [{ src: '~plugins/vue-carousel', ssr: false }],
   head: {
-    title: 'git-project',
+    title: 'pro',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
