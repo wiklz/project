@@ -2,9 +2,7 @@ module.exports = {
   modules: [
     'bootstrap-vue/nuxt',
   ],
-  // css: [
-  //   'assets/main.css'
-  // ],
+
   transition: {
     name: 'slides',
     mode: 'out-in'

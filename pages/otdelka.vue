@@ -80,28 +80,24 @@
         this.subpages[1].visible = '';
         this.subpages[2].visible = '';
         this.subpages[3].visible = '';
-        this.subpages[4].visible = '';
       },
       showSubpage1: function () {
         this.subpages[0].visible = '';
         this.subpages[1].visible = 'active';
         this.subpages[2].visible = '';
         this.subpages[3].visible = '';
-        this.subpages[4].visible = '';
       },
       showSubpage2: function () {
         this.subpages[0].visible = '';
         this.subpages[1].visible = '';
         this.subpages[2].visible = 'active';
         this.subpages[3].visible = '';
-        this.subpages[4].visible = '';
       },
       showSubpage3: function () {
         this.subpages[0].visible = '';
         this.subpages[1].visible = '';
         this.subpages[2].visible = '';
         this.subpages[3].visible = 'active';
-        this.subpages[4].visible = '';
       }
     }
   }
@@ -135,6 +131,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         div{
           cursor: pointer;
           width: 30px;
@@ -144,6 +141,16 @@
           display: flex;
           flex-direction: row;
           transition: all .5s ease-in-out;
+          animation: submenu-animation .75s linear forwards;
+          &:nth-child(2){
+            animation: submenu-animation 1s linear forwards;
+          }
+          &:nth-child(3){
+            animation: submenu-animation 1.25s linear forwards;
+          }
+          &:nth-child(4){
+            animation: submenu-animation 1.5s linear forwards;
+          }
           &:hover{
             width: 45px;
             & .desc{
@@ -203,15 +210,32 @@
     animation: slides-in 1s;
   }
   .slides-leave-active {
-    animation: slides-out .5s;
+    animation: fades-out .5s;
   }
   @keyframes slides-in {
     0% { transform: translateX(100%) }
     50%{transform: translateX(100%)}
     100% { transform: translateX(0) }
   }
-  @keyframes slides-out {
-    0% { transform: translateX(0) }
-    100% { transform: translateX(100%) }
+  @keyframes fades-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes submenu-animation {
+    0%{
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    50%{
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    75%{
+      opacity: 1;
+      transform: translateX(50px);
+    }
+    100%{
+      transform: translateX(0);
+    }
   }
 </style>

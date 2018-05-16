@@ -39,6 +39,7 @@ export default {
     text-align: center;
     h1{
       font-size: 7rem;
+      animation: pulse 3s ease-in 10s infinite alternate;
     }
     h3{
       font-size: 2.1rem;
@@ -59,5 +60,12 @@ export default {
   0% {opacity: 1;}
   100% {opacity: 0;}
 }
-
+@keyframes pulse {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: .3;
+  }
+}
 </style>
