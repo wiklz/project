@@ -3,27 +3,35 @@
     <div class="wrapper">
       <h1 class="title">{{page.title}}</h1>
       <div class="menu">
-        <div @click="showSubpage0">
+        <div @click="showSubpage0" :class="subpages[0].visible">
           <span class="link">-</span>
           <span class="desc">{{subpages[0].name}}</span>
         </div>
-        <div @click="showSubpage1">
+        <div @click="showSubpage1" :class="subpages[1].visible">
           <span class="link">-</span>
           <span class="desc">{{subpages[1].name}}</span>
         </div>
-        <div @click="showSubpage2">
+        <div @click="showSubpage2" :class="subpages[2].visible">
           <span class="link">-</span>
           <span class="desc">{{subpages[2].name}}</span>
         </div>
-        <div @click="showSubpage3">
+        <div @click="showSubpage3" :class="subpages[3].visible">
           <span class="link">-</span>
           <span class="desc">{{subpages[3].name}}</span>
         </div>
       </div>
-      <flat v-show="subpages[0].visible"/>
-      <office v-show="subpages[1].visible"/>
-      <tk v-show="subpages[2].visible"/>
-      <commerce v-show="subpages[3].visible"/>
+      <transition name="slides" mode="out-in">
+        <flat v-show="subpages[0].visible"/>
+      </transition>
+      <transition name="slides" mode="out-in">
+        <office v-show="subpages[1].visible"/>
+      </transition>
+      <transition name="slides" mode="out-in">
+        <tk v-show="subpages[2].visible"/>
+      </transition>
+      <transition name="slides" mode="out-in">
+        <commerce v-show="subpages[3].visible"/>
+      </transition>
     </div>
   </section>
 </template>
@@ -39,6 +47,7 @@
     components: {
       flat, office, tk, commerce
     },
+    transition: 'slide',
     data: function () {
       return{
         page:{
@@ -47,19 +56,19 @@
         subpages: [
           {
             name: 'Квартиры',
-            visible: true
+            visible: 'active'
           },
           {
             name: 'Офисы',
-            visible: false
+            visible: ''
           },
           {
             name: 'Торговые комплексы',
-            visible: false
+            visible: ''
           },
           {
             name: 'Коммерческие помещения',
-            visible: false
+            visible: ''
           },
 
         ]
@@ -67,32 +76,32 @@
     },
     methods: {
       showSubpage0: function () {
-        this.subpages[0].visible = true;
-        this.subpages[1].visible = false;
-        this.subpages[2].visible = false;
-        this.subpages[3].visible = false;
-        this.subpages[4].visible = false;
+        this.subpages[0].visible = 'active';
+        this.subpages[1].visible = '';
+        this.subpages[2].visible = '';
+        this.subpages[3].visible = '';
+        this.subpages[4].visible = '';
       },
       showSubpage1: function () {
-        this.subpages[0].visible = false;
-        this.subpages[1].visible = true;
-        this.subpages[2].visible = false;
-        this.subpages[3].visible = false;
-        this.subpages[4].visible = false;
+        this.subpages[0].visible = '';
+        this.subpages[1].visible = 'active';
+        this.subpages[2].visible = '';
+        this.subpages[3].visible = '';
+        this.subpages[4].visible = '';
       },
       showSubpage2: function () {
-        this.subpages[0].visible = false;
-        this.subpages[1].visible = false;
-        this.subpages[2].visible = true;
-        this.subpages[3].visible = false;
-        this.subpages[4].visible = false;
+        this.subpages[0].visible = '';
+        this.subpages[1].visible = '';
+        this.subpages[2].visible = 'active';
+        this.subpages[3].visible = '';
+        this.subpages[4].visible = '';
       },
       showSubpage3: function () {
-        this.subpages[0].visible = false;
-        this.subpages[1].visible = false;
-        this.subpages[2].visible = false;
-        this.subpages[3].visible = true;
-        this.subpages[4].visible = false;
+        this.subpages[0].visible = '';
+        this.subpages[1].visible = '';
+        this.subpages[2].visible = '';
+        this.subpages[3].visible = 'active';
+        this.subpages[4].visible = '';
       }
     }
   }
@@ -112,9 +121,6 @@
       flex-direction: column;
       /*justify-content: space-between;*/
       text-align: center;
-      background: #000 url("/static/images/doors.jpeg") repeat-x center;
-      background-size: auto 100%;
-      box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
       padding-top: 180px;
       .title{
         text-decoration: underline;
@@ -148,6 +154,13 @@
               opacity: 1;
             }
           }
+          &.active{
+            width: 45px;
+            & .link{
+              width: 45px;
+              opacity: 1;
+            }
+          }
           .link{
             font-weight: 300;
             font-size: 0;
@@ -172,6 +185,33 @@
       }
     }
   }
-
-
+  .slide-enter-active {
+    animation: slide-in .5s;
+  }
+  .slide-leave-active {
+    animation: slide-out .5s;
+  }
+  @keyframes slide-in {
+    0% { transform: translateX(100%) }
+    100% { transform: translateX(0) }
+  }
+  @keyframes slide-out {
+    0% { transform: translateX(0) }
+    100% { transform: translateX(-100%) }
+  }
+  .slides-enter-active {
+    animation: slides-in 1s;
+  }
+  .slides-leave-active {
+    animation: slides-out .5s;
+  }
+  @keyframes slides-in {
+    0% { transform: translateX(100%) }
+    50%{transform: translateX(100%)}
+    100% { transform: translateX(0) }
+  }
+  @keyframes slides-out {
+    0% { transform: translateX(0) }
+    100% { transform: translateX(100%) }
+  }
 </style>

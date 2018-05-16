@@ -35,7 +35,8 @@
     margin-top: 100px;
     margin-left: 19%;
     width: 75%;
-    height: 50vh;
+    height: 60vh;
+    padding-bottom: 5%;
     display: flex;
     flex-direction: row;
     .description{

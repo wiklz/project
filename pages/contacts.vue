@@ -9,6 +9,7 @@
 <script>
     export default {
         name: "contacts",
+      transition: 'slide',
       data: function () {
         return{
           page: {
@@ -33,13 +34,24 @@
       flex-direction: column;
       /*justify-content: space-between;*/
       text-align: center;
-      background: #000 url("/static/images/doors.jpeg") repeat-x center;
-      background-size: auto 100%;
-      box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
       padding-top: 180px;
       .title{
         text-decoration: underline;
       }
     }
+  }
+  .slide-enter-active {
+    animation: slide-in .5s;
+  }
+  .slide-leave-active {
+    animation: slide-out .5s;
+  }
+  @keyframes slide-in {
+    0% { transform: translateX(100%) }
+    100% { transform: translateX(0) }
+  }
+  @keyframes slide-out {
+    0% { transform: translateX(0) }
+    100% { transform: translateX(-100%) }
   }
 </style>

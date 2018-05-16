@@ -13,6 +13,7 @@ export default {
   components: {
 
   },
+  transition: 'fade',
   data:function () {
     return{
       name: 'Brigadir',
@@ -36,9 +37,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background: #000 url("/static/images/doors.jpeg") repeat-x center;
-    background-size: auto 100%;
-    box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
     h1{
       font-size: 7rem;
     }
@@ -47,6 +45,19 @@ export default {
     }
   }
 }
-
+.fade-enter-active {
+  animation: fade-in 1s;
+}
+.fade-leave-active {
+  animation: fade-out 1s;
+}
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
 
 </style>

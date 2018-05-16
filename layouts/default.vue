@@ -43,7 +43,9 @@
     body{
       padding: 0;
       margin: 0;
-      background: #000000;
+      background: #000 url("/static/images/doors.jpeg") repeat-x center;
+      background-size: auto 100%;
+      box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
       width: 100%;
       height: 100%;
       overflow: hidden;
