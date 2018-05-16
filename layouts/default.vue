@@ -1,13 +1,22 @@
 <template>
   <div class="mainPage">
     <section class="menu">
-      <nuxt-link to="/" class="mt-2 mx-3 logo"><img src="~/static/logo.svg"></nuxt-link>
+      <nuxt-link to="/" class="mt-2 ml-5 logo"><img src="~/static/logo.svg"></nuxt-link>
       <ul>
         <li>
-          <nuxt-link to="/page1" class="menu-link">Главная</nuxt-link>
+          <nuxt-link to="/" class="menu-link">Главная</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/page2" class="menu-link">Галерея</nuxt-link>
+          <nuxt-link to="/stroi" class="menu-link">Строительство</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/otdelka" class="menu-link">Отделка</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="#" class="menu-link">Галерея</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contacts" class="menu-link">Контакты</nuxt-link>
         </li>
       </ul>
     </section>
@@ -28,12 +37,16 @@
     }
     p, span, i{
       font-family: 'Roboto', sans-serif;
-      font-weight: 400;;
+      font-weight: 300;
+      line-height: 30px;
     }
     body{
       padding: 0;
       margin: 0;
       background: #000000;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       .menu {
         display: flex;
         flex-direction: row;
@@ -58,16 +71,21 @@
           li{
             margin: auto;
             list-style: none;
+            .nuxt-link-exact-active{
+              border-bottom: 1px solid #fff !important;
+            }
             .menu-link{
               font-family: 'Roboto Slab', serif;
               font-weight: 400;
               opacity: .7;
               color: #fff;
+              border-bottom: 1px solid transparent;
               text-decoration: none;
-              transition: opacity .5s ease-in-out;
+              transition: all .5s ease-in-out;
 
               &:hover{
                 opacity: 1;
+                border-bottom: 1px solid #fff;
               }
               &-active{
                 opacity: 1;

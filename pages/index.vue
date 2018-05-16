@@ -1,8 +1,8 @@
 <template>
   <section class="container-fluid p-0">
     <div class="header">
-      <h1>Brigadir</h1>
-      <h3>Lorem ipsum dolor sit amet.</h3>
+      <h1>{{name}}</h1>
+      <h3>{{description}}</h3>
     </div>
   </section>
 </template>
@@ -12,28 +12,39 @@
 export default {
   components: {
 
+  },
+  data:function () {
+    return{
+      name: 'Brigadir',
+      description: 'Строительная компания'
+    }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container-fluid {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   .header{
-    color: #ddd;
+    color: #ccc;
     width: 100%;
     height: 100vh;
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background: #000 url("/static/images/doors.jpeg") no-repeat top;
-    background-size: 100% auto;
+    background: #000 url("/static/images/doors.jpeg") repeat-x center;
+    background-size: auto 100%;
     box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
+    h1{
+      font-size: 7rem;
+    }
+    h3{
+      font-size: 2.1rem;
+    }
   }
 }
 
