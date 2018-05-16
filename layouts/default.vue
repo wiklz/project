@@ -13,7 +13,7 @@
           <nuxt-link to="/otdelka" class="menu-link">Отделка</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="#" class="menu-link">Галерея</nuxt-link>
+          <nuxt-link to="/gallery" class="menu-link">Галерея</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/contacts" class="menu-link">Контакты</nuxt-link>

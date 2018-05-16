@@ -92,6 +92,7 @@
               opacity: .8;
             }
             button{
+              cursor: pointer;
               margin: 15px auto;
               width: 100%;
               border-radius: 5px;
