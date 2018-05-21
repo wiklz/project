@@ -9,11 +9,12 @@
           <p>Email: {{contacts.email}}</p>
         </div>
         <div class="form col-6">
-          <form>
-            <input name="name" type="text" placeholder="Ваше имя*" required>
-            <input name="tel" type="tel" placeholder="Телефон для связи*" required>
-            <input name="email" placeholder="Ваш email" type="email">
-            <input name="text" placeholder="Ваше вопрос" type="text">
+          <form action="https://formspree.io/wiklz@ya.ru" method="post">
+            <input name="Name" type="text" placeholder="Ваше имя*" required>
+            <input name="Tel" type="tel" placeholder="Телефон для связи*" required>
+            <input name="Email" placeholder="Ваш email" type="email">
+            <input name="Question" placeholder="Ваше вопрос" type="text">
+            <input type="text" name="_gotcha" style="display:none" />
             <button>Отправить</button>
           </form>
         </div>

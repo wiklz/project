@@ -1,16 +1,18 @@
 <template>
+  <transition name="fade">
   <div class="wrapper" v-show="visible" @click.self="close()">
-    <div class="container image-holder">
+    <div class="image-holder">
       <slot></slot>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
   import eventBus from "~/plugins/eventBus";
 
   export default {
-        name: "modalImage",
+    name: "modalImage",
       data(){
         return{
           visible: false
@@ -38,13 +40,14 @@
   top: 0;
   left: 0;
   z-index: 100;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, .8);
   display: flex;
   justify-content: center;
   .image-holder{
-    height: 60%;
+    width: auto;
+    max-height: 80%;
     background-color: #fff;
     margin: auto;
     padding: 0;
@@ -54,8 +57,23 @@
     justify-content: center;
     img{
       width: 100%;
+      height: auto;
       margin: auto;
     }
   }
+}
+.fade-enter-active {
+  animation: fadein .5s linear forwards;
+}
+.fade-leave-active {
+  animation: fadeout .5s linear forwards;
+}
+@keyframes fadein {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+@keyframes fadeout {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
 }
 </style>
