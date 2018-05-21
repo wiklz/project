@@ -2,6 +2,7 @@
   <section class="container-fluid p-0">
     <div class="wrapper">
       <h1 class="title">{{page.title}}</h1>
+
     </div>
   </section>
 </template>

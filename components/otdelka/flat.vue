@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="flat">
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
@@ -7,21 +7,32 @@
           minus modi nam placeat praesentium quae quo, rem temporibus, tenetur, voluptate! Architecto doloribus possimus
           sint suscipit ullam unde?</p>
       </div>
-      <div class="image col-6">
+      <div class="image col-6" @click="openModal">
 
       </div>
     </div>
+    <modalImage>
+      <img src="~/static/images/flat.jpg" alt="">
+    </modalImage>
   </div>
 </template>
 
 <script>
+  import modalImage from '~/components/modals/modal-image.vue';
+  import eventBus from "~/plugins/eventBus";
   export default {
     name: "flat",
+    components: {modalImage},
     data: function () {
       return{
         subpage: {
           name: 'Квартиры'
         }
+      }
+    },
+    methods: {
+      openModal: function () {
+        eventBus.$emit('openModal');
       }
     }
   }

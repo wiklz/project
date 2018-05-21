@@ -7,23 +7,35 @@
           minus modi nam placeat praesentium quae quo, rem temporibus, tenetur, voluptate! Architecto doloribus possimus
           sint suscipit ullam unde?</p>
       </div>
-      <div class="image col-6">
+      <div class="image col-6" @click="openModal">
 
       </div>
     </div>
+    <modalImage>
+      <img src="~/static/images/com.jpg" alt="">
+    </modalImage>
   </div>
 </template>
 
 <script>
-  export default {
+  import modalImage from '~/components/modals/modal-image.vue';
+  import eventBus from "~/plugins/eventBus";
+
+export default {
     name: "commerce",
+  components: {modalImage},
     data: function () {
       return{
         subpage: {
           name: 'Коммерческие помещения'
         }
       }
+    },
+  methods: {
+    openModal: function () {
+      eventBus.$emit('openModal');
     }
+  }
   }
 </script>
 

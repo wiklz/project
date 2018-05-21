@@ -8,21 +8,33 @@
           reiciendis sint voluptatibus. Aliquam atque consequatur dolor dolores eius, eos est ipsam ipsum, iste modi nam
           nesciunt perspiciatis quas quasi ratione repellendus, reprehenderit repudiandae.</p>
       </div>
-      <div class="image col-6">
+      <div class="image col-6" @click="openModal">
 
       </div>
     </div>
+    <modalImage>
+      <img src="~/static/images/head.jpg" alt="">
+    </modalImage>
   </div>
 </template>
 
 <script>
+  import modalImage from '~/components/modals/modal-image.vue';
+  import eventBus from "~/plugins/eventBus";
+
     export default {
-        name: "brus",
+      name: "brus",
+      components: {modalImage},
       data: function () {
         return{
           subpage: {
             name: 'Дома из клееного бруса'
           }
+        }
+      },
+      methods: {
+        openModal: function () {
+          eventBus.$emit('openModal');
         }
       }
     }

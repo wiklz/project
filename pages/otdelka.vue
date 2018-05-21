@@ -45,7 +45,7 @@
   export default {
     name: 'otdelka',
     components: {
-      flat, office, tk, commerce
+      flat, office, tk, commerce,
     },
     transition: 'slide',
     data: function () {

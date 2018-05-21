@@ -6,21 +6,33 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda aut doloribus eligendi error hic
           officia quas tempora unde ut!</p>
       </div>
-      <div class="image col-6">
+      <div class="image col-6" @click="openModal">
 
       </div>
     </div>
+    <modalImage>
+      <img src="~/static/images/funds.jpg" alt="">
+    </modalImage>
   </div>
 </template>
 
 <script>
+  import modalImage from '~/components/modals/modal-image.vue';
+  import eventBus from "~/plugins/eventBus";
+
   export default {
     name: "fund",
+    components: {modalImage},
     data: function () {
       return{
         subpage: {
           name: 'Фундаменты'
         }
+      }
+    },
+    methods: {
+      openModal: function () {
+        eventBus.$emit('openModal');
       }
     }
   }

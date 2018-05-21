@@ -10,21 +10,33 @@
           excepturi exercitationem explicabo facilis harum laboriosam nobis obcaecati quas quidem quod temporibus
           veritatis. Accusantium aperiam cupiditate deserunt laudantium perspiciatis ratione similique sint sunt?</p>
       </div>
-      <div class="image col-6">
+      <div class="image col-6" @click="openModal">
 
       </div>
     </div>
+    <modalImage>
+      <img src="~/static/images/ofis.png" alt="">
+    </modalImage>
   </div>
 </template>
 
 <script>
+  import modalImage from '~/components/modals/modal-image.vue';
+  import eventBus from "~/plugins/eventBus";
+
   export default {
     name: "loc",
+    components: {modalImage},
     data: function () {
       return{
         subpage: {
           name: 'Локальные очистные сооружения'
         }
+      }
+    },
+    methods: {
+      openModal: function () {
+        eventBus.$emit('openModal');
       }
     }
   }
