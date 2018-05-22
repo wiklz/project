@@ -5,8 +5,7 @@
       <transition name="fadein">
         <div class="content">
             <div class="place" v-for="place in $store.state.places" :class="place.id" :id="place.id" :key="place.id"
-                 v-bind:style="'background: url(\'images/' + place.min + '\') no-repeat center;background-size: 100% auto;'"
-            @click="openCarousel()">
+                 v-bind:style="'background: url(\'images/' + place.min + '\') no-repeat center;background-size: 100% auto;'">
               <h4>{{place.name}}</h4>
             </div>
         </div>
@@ -34,14 +33,11 @@
           }
         }
       },
-      methods: {
-        openCarousel: function () {
-          for(let i = 0; i < this.$nuxt.$store.state.places.length; i++){
-            i = i.toString();
-            document.getElementById(i).onclick = function () {
-              eventBus.$emit('openCarousel');
-              eventBus.$emit('openCarouselitem' + i);
-            }
+      mounted:function () {
+        for (let i = 0; i < this.$nuxt.$store.state.places.length; i++) {
+          i = i.toString();
+          document.getElementById(i).onclick = function () {
+            eventBus.$emit('openCarouselitem' + i);
           }
         }
       }

@@ -2,7 +2,6 @@
   <div class="wrapper" v-show="visible" @click.self="close()">
     <div class="gallerycarousel">
       <b-carousel id="carousel1"
-                  style="text-shadow: 1px 1px 2px #333;"
                   controls
                   indicators
                   background="#000"
@@ -60,56 +59,61 @@
         }
       },
       created() {
-          eventBus.$on('openCarousel', () =>{
-            this.visible = true;
-          });
         eventBus.$on('openCarouselitem0', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[0] = true;
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem1', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[1] = true;
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem2', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[2] = true;
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem3', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[3] = true;
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem4', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[4] = true;
+
         });
         eventBus.$on('openCarouselitem5', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[5] = true;
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem6', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[6] = true;
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem7', () =>{
           for(let i = 0; i < this.slider.length; i++){
             this.slider[i] = false;
           }
           this.slider[7] = true;
+          this.visible = true;
         });
       }
     }
@@ -126,7 +130,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 5% !important;
+  padding-bottom: 6%;
   .gallerycarousel{
     height:auto;
     max-height: 90vh;
