@@ -2,25 +2,46 @@
   <section class="container-fluid p-0">
     <div class="wrapper">
       <h1 class="title">{{page.title}}</h1>
-      <div class="content">
-        <div class="place" v-for="place in $store.state.places" :key="place.id"
-        v-bind:style="'background: url(\'images/' + place.images[0] + '\') no-repeat center;background-size: 100% auto;'">
-          <h4>{{place.name}}</h4>
-          <!--<img :src="'images/' + place.images[0]" :alt="place.images[0]">-->
+      <transition name="fadein">
+        <div class="content">
+            <div class="place" v-for="place in $store.state.places" :class="place.id" :id="place.id" :key="place.id"
+                 v-bind:style="'background: url(\'images/' + place.min + '\') no-repeat center;background-size: 100% auto;'"
+            @click="openCarousel()">
+              <h4>{{place.name}}</h4>
+            </div>
         </div>
-      </div>
+      </transition>
     </div>
+    <galleryCarousel></galleryCarousel>
   </section>
 </template>
 
 <script>
+
+  //все данные для картинок хранятся во vuex в store/index.js
+
+  import galleryCarousel from '~/components/modals/gallery-carousel.vue';
+  import eventBus from "~/plugins/eventBus";
+
     export default {
-        name: "gallery",
+      name: "gallery",
+      components: {galleryCarousel},
       transition: 'slide',
       data: function () {
         return{
           page: {
             title: 'Галерея'
+          }
+        }
+      },
+      methods: {
+        openCarousel: function () {
+          for(let i = 0; i < this.$nuxt.$store.state.places.length; i++){
+            i = i.toString();
+            document.getElementById(i).onclick = function () {
+              eventBus.$emit('openCarousel');
+              eventBus.$emit('openCarouselitem' + i);
+            }
           }
         }
       }
@@ -48,21 +69,21 @@
       .content{
         margin-top: 50px;
         padding: 90px 0 0;
-        /*border: 1px solid red;*/
         height: 70vh;
+        opacity: 0;/*для анимации*/
+        animation: fadein 1s ease-in-out .25s forwards;
         .place{
           margin: 10px;
           width: 15%;
           height: 35%;
           display: inline-block;
           vertical-align: top;
-          /*border: 1px solid yellow;*/
           border-radius: 5px;
           overflow: hidden;
           background-size: auto 50%;
           box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
           cursor: pointer;
-          transition: all .7s ease-in-out;
+          transition: all .5s ease-in-out;
           h4{
             height: 100%;
             width: 100%;
@@ -70,7 +91,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            transition: opacity .7s ease-in-out;
+            transition: opacity .5s ease-in-out;
           }
           &:hover{
             box-shadow:  rgba(0, 0, 0, 0) 0 0 0 500px inset;
@@ -96,5 +117,9 @@
   @keyframes slide-out {
     0% { transform: translateX(0) }
     100% { transform: translateX(-100%) }
+  }
+  @keyframes fadein {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
   }
 </style>
