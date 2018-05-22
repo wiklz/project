@@ -1,4 +1,5 @@
 <template>
+  <transition name="slider" mode="out-in">
   <div class="wrapper" v-show="visible" @click.self="close()">
     <div class="gallerycarousel">
       <b-carousel id="carousel1"
@@ -24,6 +25,7 @@
 
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -92,7 +94,7 @@
             this.slider[i] = false;
           }
           this.slider[4] = true;
-
+          this.visible = true;
         });
         eventBus.$on('openCarouselitem5', () =>{
           for(let i = 0; i < this.slider.length; i++){
@@ -158,5 +160,19 @@
       }
     }
   }
+}
+.slider-enter-active {
+  animation: slider-in 1s;
+}
+.slider-leave-active {
+  animation: slider-out .5s;
+}
+@keyframes slider-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slider-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 </style>
