@@ -3,16 +3,16 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at atque commodi cum cumque illum ipsam
-          minus modi nam placeat praesentium quae quo, rem temporibus, tenetur, voluptate! Architecto doloribus possimus
-          sint suscipit ullam unde?</p>
+        <p>Различные виды заборов и ограждений для дома позволяют защитить участок от незаконного вторжения и создать
+          уютную атмосферу. Существуют различные варианты, позволяющие не только сберечь имущество, но и дополнить
+          ландшафтный дизайн.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/29.jpg" alt="">
+      <img src="~/static/images/4.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -61,7 +61,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/29.jpg") no-repeat top;
+      background: url("/static/images/4.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

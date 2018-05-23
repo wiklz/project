@@ -3,19 +3,15 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque autem exercitationem fugiat fugit
-          harum, iste nemo officiis optio quod recusandae similique voluptatum! Cum doloribus magnam nostrum obcaecati
-          quidem quo sit ut. Aliquam aspernatur corporis doloremque, officia perspiciatis qui quis quod rem totam
-          veritatis. Ducimus eligendi error officiis, quis repudiandae saepe tempore? Ab atque dolorem dolores, eos
-          excepturi exercitationem explicabo facilis harum laboriosam nobis obcaecati quas quidem quod temporibus
-          veritatis. Accusantium aperiam cupiditate deserunt laudantium perspiciatis ratione similique sint sunt?</p>
+        <p>Если говорить о благоустроенном особняке, то в нем, безусловно, должна присутствовать горячая и холодная
+          вода. Она необходима для принятия ванны или душа, стирки, мытья посуды, уборки, полива.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/ofis.png" alt="">
+      <img src="~/static/images/5.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -64,7 +60,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/ofis.png") no-repeat top;
+      background: url("/static/images/5.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

@@ -3,16 +3,16 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at atque commodi cum cumque illum ipsam
-          minus modi nam placeat praesentium quae quo, rem temporibus, tenetur, voluptate! Architecto doloribus possimus
-          sint suscipit ullam unde?</p>
+        <p>Многие посещают торговые центры целенаправленно за конкретными покупками и быстро покидают здание. Другие
+          могут бродить по зданию часами и проводят в них большую часть времени, поэтому внутренняя отделка торговых
+          павильонов должна располагать и способствовать комфортным условиям нахождения.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/28.jpg" alt="">
+      <img src="~/static/images/8.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -61,7 +61,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/28.jpg") no-repeat top;
+      background: url("/static/images/8.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

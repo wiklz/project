@@ -3,16 +3,15 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at atque commodi cum cumque illum ipsam
-          minus modi nam placeat praesentium quae quo, rem temporibus, tenetur, voluptate! Architecto doloribus possimus
-          sint suscipit ullam unde?</p>
+        <p>На рынке недвижимости обычно выделяют четыре основных категории коммерческих объектов, которые отличаются
+          характером эксплуатации. Это торговые, складские, офисные и производственные помещения или комплексы площадей.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/com.jpg" alt="">
+      <img src="~/static/images/9.jpeg" alt="">
     </modalImage>
   </div>
 </template>
@@ -61,7 +60,7 @@ export default {
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/com.jpg") no-repeat top;
+      background: url("/static/images/9.jpeg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

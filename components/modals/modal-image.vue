@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   .image-holder{
-    width: auto;
+    width: 65%;
     max-height: 80%;
     background-color: #fff;
     margin: auto;

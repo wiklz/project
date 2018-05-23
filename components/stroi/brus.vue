@@ -3,17 +3,16 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur deserunt dolore fugiat
-          laudantium maiores modi, nam necessitatibus neque nihil numquam odio, officiis omnis perferendis placeat
-          reiciendis sint voluptatibus. Aliquam atque consequatur dolor dolores eius, eos est ipsam ipsum, iste modi nam
-          nesciunt perspiciatis quas quasi ratione repellendus, reprehenderit repudiandae.</p>
+        <p>Большинство людей, мечтает об экологической чистоте жилья и лучших условиях для жизни. Традиции, идущие из
+          глубины веков, вкупе с новейшими технологическими процессами, позволяют сооружать деревянные дома отличного
+          качества. </p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/head.jpg" alt="">
+      <img src="~/static/images/1.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -62,7 +61,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/head.jpg") no-repeat top;
+      background: url("/static/images/1.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

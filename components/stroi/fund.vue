@@ -3,15 +3,15 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda aut doloribus eligendi error hic
-          officia quas tempora unde ut!</p>
+        <p>Строительство любого здания, будь то частный коттедж, баня или гараж, начинается с закладки фундамента.
+          Строительство любого здания, будь то частный коттедж, баня или гараж, начинается с закладки фундамента.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/funds.jpg" alt="">
+      <img src="~/static/images/3.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -60,7 +60,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/funds.jpg") no-repeat top;
+      background: url("/static/images/3.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

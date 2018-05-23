@@ -3,16 +3,16 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam at atque commodi cum cumque illum ipsam
-          minus modi nam placeat praesentium quae quo, rem temporibus, tenetur, voluptate! Architecto doloribus possimus
-          sint suscipit ullam unde?</p>
+        <p>Прежде чем браться за отделку, необходимо определиться, какой ремонт будет выполняться: косметический или
+          капитальный. Косметический ремонт подразумевает внутреннее обновление облика квартиры. Это покраска или
+          оклейка обоями стен, вариации с потолком, выбор полового покрытия.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/flat.jpg" alt="">
+      <img src="~/static/images/6.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -60,7 +60,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/flat.jpg") no-repeat top;
+      background: url("/static/images/6.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

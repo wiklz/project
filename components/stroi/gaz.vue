@@ -3,18 +3,16 @@
     <h4 class="subtitle my-3">{{subpage.name}}</h4>
     <div class="content">
       <div class="description col-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus est laborum maiores odit.
-          Architecto esse, laborum. Atque blanditiis facilis minus natus possimus, quaerat reiciendis sint. Asperiores
-          delectus dignissimos ea esse itaque laboriosam, laborum molestias mollitia, numquam, quasi quis quisquam
-          repellat rerum ullam unde. Accusamus dolorum est ipsam labore libero obcaecati soluta. Aut dolor dolore, esse
-          ipsam nam odio porro rerum totam unde veniam.</p>
+        <p>Сферы применения столь удобного и выгодного строительного материала довольно обширны. Одно из основных его
+          применений – возведение различных построек. Это и жилые дома, и административные здания, а также, школы,
+          больницы и много других.</p>
       </div>
       <div class="image col-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/gaz.jpg" alt="">
+      <img src="~/static/images/2.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -63,7 +61,7 @@
     .image{
       margin: 10px;
       overflow: hidden;
-      background: url("/static/images/gaz.jpg") no-repeat top;
+      background: url("/static/images/2.jpg") no-repeat top;
       background-size: 115% 105%;
       border-radius: 5px;
       cursor: pointer;

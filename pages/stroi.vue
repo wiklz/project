@@ -187,6 +187,13 @@ import loc from '~/components/stroi/loc.vue';
           }
           &.active{
             width: 45px;
+            &:first-child .desc{
+              opacity: 0;
+              animation: desc 1.75s linear forwards;
+            }
+            & .desc{
+              opacity: 1;
+            }
             & .link{
               width: 45px;
               opacity: 1;
@@ -260,6 +267,18 @@ import loc from '~/components/stroi/loc.vue';
     }
     100%{
       transform: translateX(0);
+    }
+  }
+  @keyframes desc {
+    0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 0;
+    }
+
+    100%{
+      opacity: 1;
     }
   }
 </style>
