@@ -1,35 +1,78 @@
 <template>
   <div class="mainPage">
     <section class="menu">
-      <nuxt-link to="/" class="mt-2 ml-5 logo"><img src="~/static/logo.svg"></nuxt-link>
-      <ul>
-        <li>
-          <nuxt-link to="/" class="menu-link">Главная</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/stroi" class="menu-link">Строительство</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/otdelka" class="menu-link">Отделка</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/gallery" class="menu-link">Галерея</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contacts" class="menu-link">Контакты</nuxt-link>
-        </li>
-      </ul>
+      <nuxt-link to="/" class="logo"><img src="~/static/logo.svg"></nuxt-link>
+      <transition name="fade">
+        <ul v-show="mobileStatus">
+          <li @click="changeMobilStatus">
+            <nuxt-link to="/" class="menu-link">Главная</nuxt-link>
+          </li>
+          <li @click="changeMobilStatus">
+            <nuxt-link to="/stroi" class="menu-link">Строительство</nuxt-link>
+          </li>
+          <li @click="changeMobilStatus">
+            <nuxt-link to="/otdelka" class="menu-link">Отделка</nuxt-link>
+          </li>
+          <li @click="changeMobilStatus">
+            <nuxt-link to="/gallery" class="menu-link">Галерея</nuxt-link>
+          </li>
+          <li @click="changeMobilStatus">
+            <nuxt-link to="/contacts" class="menu-link">Контакты</nuxt-link>
+          </li>
+        </ul>
+      </transition>
+      <svg
+        class="menubtn"
+        
+        @click="changeMobilStatus"
+        id="menu-svg"
+        data-name="menu-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 50 40">
+        <defs>
+          <style>
+            .cls-1{fill:#fff;}
+            .cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}
+          </style>
+        </defs>
+        <title>Menu Button</title>
+        <path
+          class="cls-1"
+          d="M45.53,6.79a2.69,2.69,0,0,1,2.68,2.68V40.53a2.69,2.69,0,0,1-2.68,2.68H4.47a2.69,2.69,0,0,1-2.68-2.68V9.47A2.69,2.69,0,0,1,4.47,6.79H45.53m0-1.79H4.47A4.49,4.49,0,0,0,0,9.47V40.53A4.49,4.49,0,0,0,4.47,45H45.53A4.49,4.49,0,0,0,50,40.53V9.47A4.49,4.49,0,0,0,45.53,5Z"
+          transform="translate(0 -5)"/>
+        <line class="cls-2" x1="10" y1="20" x2="40" y2="20"/>
+        <line class="cls-2" x1="10" y1="30" x2="40" y2="30"/>
+        <line class="cls-2" x1="10" y1="10" x2="40" y2="10"/>
+      </svg>
     </section>
-    <nuxt/>
+    <!--<nuxt/>-->
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+      mobileStatus: false
+      }
+    },
+    methods: {
+      changeMobilStatus: function () {
+        if(this.mobileStatus === false){
+          this.mobileStatus = true;
+        }else {
+          this.mobileStatus = false;
+        }
 
+      }
+    }
+  }
+</script>
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,latin-ext');
   html {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    height: 100vh;
     color: #333;
     h1, h2, h3, h4, h5, h6{
       font-family: 'Roboto Slab', serif;
@@ -62,6 +105,7 @@
         .logo{
           display: block;
           width: 180px;
+          margin: 10px 15px;
         }
         ul{
           display: flex;
@@ -98,6 +142,53 @@
         }
       }
     }
+  }
+@media (max-width: 360px){
+  html {
+    height: auto;
+    overflow: visible;
+    body{
+      height: 800px;
+      .menu {
+        .logo{
+          margin: auto;
+        }
+        .menubtn{
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          z-index: 100;
+          width: 40px;
+          opacity: .5;
+        }
+        ul{
+          position: absolute;
+          width: 100%;
+          height: 55vh;
+          background: rgba(0,0,0,.9);
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 60px 0 0;
+          li{
+            margin: auto;
+            list-style: none;
+            .nuxt-link-exact-active{
+
+            }
+            .menu-link{
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  .fade-enter-active, .fade-leave-active {
+    transition: all .7s ease-in-out;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    transform: translateY(-100%);
   }
 
 </style>
