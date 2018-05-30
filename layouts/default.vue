@@ -23,7 +23,7 @@
       </transition>
       <svg
         class="menubtn"
-        
+        :class="menuState"
         @click="changeMobilStatus"
         id="menu-svg"
         data-name="menu-svg"
@@ -52,18 +52,20 @@
   export default {
     data() {
       return {
-      mobileStatus: false
+        mobileStatus: false,
+        menuState: 'close'
       }
     },
     methods: {
       changeMobilStatus: function () {
         if(this.mobileStatus === false){
           this.mobileStatus = true;
+          this.menuState = 'open';
         }else {
           this.mobileStatus = false;
+          this.menuState = 'close';
         }
-
-      }
+      },
     }
   }
 </script>
@@ -160,6 +162,23 @@
           z-index: 100;
           width: 40px;
           opacity: .5;
+          line, path{
+            transition: opacity .5s ease-in-out, transform .7s ease-in-out;
+          }
+          &.open {
+            path{
+              opacity: 0;
+            }
+            line:nth-child(6){
+              transform: rotate(35deg) translate3d(8px, -8px, 0);
+            }
+            line:nth-child(4){
+              opacity: 0;
+            }
+            line:nth-child(5){
+              transform: rotate(-35deg) translate3d(-16px, 2px, 0);
+            }
+          }
         }
         ul{
           position: absolute;
