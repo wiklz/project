@@ -1,5 +1,5 @@
 <template>
-  <div class="mainPage" @click.self="changeMobilStatus">
+  <div class="mainPage">
     <section class="menu">
       <nuxt-link to="/" class="logo"><img src="~/static/logo.svg"></nuxt-link>
       <ul class="big-menu">
@@ -82,16 +82,8 @@
           this.mobileStatus = false;
           this.menuState = 'close';
         }
-      },
-
-    },
-  mounted() {
-    window.onscroll = this.changeMobilStatus();
-    console.log('ready');
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
+      }
+    }
   }
 </script>
 <style lang="scss">
