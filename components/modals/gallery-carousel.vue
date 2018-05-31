@@ -161,6 +161,30 @@
     }
   }
 }
+@media (max-width: 567px){
+  .wrapper{
+    padding: 0;
+    background: rgba(0,0,0, .7);
+    .gallerycarousel{
+      height:auto;
+      max-height: 90vh;
+      max-width: 90%;
+    }
+  }
+}
+@media (min-width: 568px) and (max-width: 823px){
+  .wrapper{
+    z-index: 100;
+    padding: 0 !important;
+    justify-content: center !important;
+    background: rgba(0,0,0, .9);
+    .gallerycarousel{
+      height:100%;
+      width: auto;
+    }
+  }
+}
+/*ANIMATIONS*/
 .slider-enter-active {
   animation: slider-in 1s;
 }

@@ -102,6 +102,53 @@
       }
     }
   }
+  @media (max-width: 567px) {
+    .container-fluid {
+      .wrapper {
+        padding-top: 20%;
+        .content{
+          margin: 10px;
+          padding: 0;
+          .place{
+            width: 40%;
+            height: 20%;
+            h4{
+              height: 100%;
+              width: 100%;
+              font-size: 18px;
+            }
+            &:hover{
+              box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px){
+    .container-fluid {
+      .wrapper {
+        padding-top: 10%;
+        .content{
+          margin: 10px;
+          padding: 0;
+          .place{
+            width: 20%;
+            height: 35%;
+            h4{
+              height: 100%;
+              width: 100%;
+              font-size: 15px;
+            }
+            &:hover{
+              box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*ANIMATIONS*/
   .slide-enter-active {
     animation: slide-in .5s;
   }

@@ -2,13 +2,13 @@
   <section class="container-fluid p-0">
     <div class="wrapper">
       <h1 class="title">{{page.title}}</h1>
-      <div class="content mt-5">
-        <div class="info col-6">
+      <div class="content mt-xl-5">
+        <div class="info col-xl-6">
           <p>{{contacts.adress}}</p>
           <p>Тел.: {{contacts.phone}}</p>
           <p>Email: {{contacts.email}}</p>
         </div>
-        <div class="form col-6">
+        <div class="form col-xl-6">
           <form action="https://formspree.io/wiklz@ya.ru" method="post">
             <input name="Name" type="text" placeholder="Ваше имя*" required>
             <input name="Tel" type="tel" placeholder="Телефон для связи*" required>
@@ -115,6 +115,66 @@
       }
     }
   }
+  @media (max-width: 567px){
+    .container-fluid {
+      .wrapper{
+        padding-top: 30%;
+        .content{
+          width: 100%;
+          height: 65vh;
+          display: flex;
+          flex-direction: column-reverse;
+          .info{
+            height: 40%;
+            p{
+              font-size: 13px;
+              margin: 0 auto;
+            }
+          }
+          .form{
+            form{
+              width: 60%;
+              input{
+                margin: 5px auto;
+              }
+              button{
+                margin: 5px auto 0;
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px){
+    .container-fluid {
+      .wrapper{
+        padding-top: 50px;
+        .content{
+          height: 65vh;
+          .info{
+            height: 80%;
+          }
+          .form{
+            form{
+              width: 70%;
+              input{
+                margin: 5px auto;
+                padding: 5px;
+                height: 40px;
+              }
+              button{
+                margin: 5px auto -5px;
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /*ANIMATIONS*/
   .slide-enter-active {
     animation: slide-in .5s;
   }

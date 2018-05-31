@@ -46,6 +46,33 @@ export default {
     }
   }
 }
+@media (max-width: 567px){
+  .container-fluid {
+    .header{
+      h1{
+        font-size: 5rem;
+        animation: none;
+      }
+      h3{
+        font-size: 2.1rem;
+      }
+    }
+  }
+}
+@media (min-width: 568px) and (max-width: 823px){
+  .container-fluid {
+    .header{
+      h1{
+        font-size: 5rem;
+        animation: none;
+      }
+      h3{
+        font-size: 2.1rem;
+      }
+    }
+  }
+}
+/*ANIMATIONS*/
 .fade-enter-active {
   animation: fade-in 1s;
 }

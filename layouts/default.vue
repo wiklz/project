@@ -1,9 +1,26 @@
 <template>
-  <div class="mainPage">
+  <div class="mainPage" @click.self="changeMobilStatus">
     <section class="menu">
       <nuxt-link to="/" class="logo"><img src="~/static/logo.svg"></nuxt-link>
+      <ul class="big-menu">
+        <li>
+          <nuxt-link to="/" class="menu-link">Главная</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/stroi" class="menu-link">Строительство</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/otdelka" class="menu-link">Отделка</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/gallery" class="menu-link">Галерея</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contacts" class="menu-link">Контакты</nuxt-link>
+        </li>
+      </ul>
       <transition name="fade">
-        <ul v-show="mobileStatus">
+        <ul class="small-menu" v-show="mobileStatus">
           <li @click="changeMobilStatus">
             <nuxt-link to="/" class="menu-link">Главная</nuxt-link>
           </li>
@@ -45,7 +62,7 @@
         <line class="cls-2" x1="10" y1="10" x2="40" y2="10"/>
       </svg>
     </section>
-    <!--<nuxt/>-->
+    <nuxt/>
   </div>
 </template>
 <script>
@@ -66,7 +83,15 @@
           this.menuState = 'close';
         }
       },
-    }
+
+    },
+  mounted() {
+    window.onscroll = this.changeMobilStatus();
+    console.log('ready');
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
   }
 </script>
 <style lang="scss">
@@ -109,8 +134,16 @@
           width: 180px;
           margin: 10px 15px;
         }
-        ul{
+        .menubtn{
+          display: none;
+        }
+        .small-menu{
+          display: none;
+        }
+        .big-menu{
           display: flex;
+        }
+        ul{
           flex-direction: row;
           justify-content: space-between;
           height: 50px;
@@ -145,18 +178,20 @@
       }
     }
   }
-@media (max-width: 360px){
+  @media (max-width: 567px){
   html {
-    height: auto;
-    overflow: visible;
+    height:100vh;
+    overflow: hidden;
     body{
-      height: 800px;
+      height: 100%;
       .menu {
+        z-index: 100;
         .logo{
           margin: auto;
         }
         .menubtn{
           position: absolute;
+          display: block;
           top: 15px;
           right: 15px;
           z-index: 100;
@@ -180,8 +215,13 @@
             }
           }
         }
-        ul{
+        .big-menu{
+          display: none;
+        }
+        .small-menu{
+          display: flex;
           position: absolute;
+          z-index: 100;
           width: 100%;
           height: 55vh;
           background: rgba(0,0,0,.9);
@@ -203,6 +243,60 @@
     }
   }
 }
+  @media (min-width: 568px) and (max-width: 823px){
+    html {
+      height:100vh;
+      overflow: hidden;
+      body{
+        height: 100%;
+        .menu {
+          z-index: 100;
+          .logo{
+            margin: auto;
+          }
+          .menubtn{
+            position: absolute;
+            display: block;
+            top: 15px;
+            right: 15px;
+            z-index: 100;
+            width: 40px;
+            opacity: .5;
+            line, path{
+              transition: opacity .5s ease-in-out, transform .7s ease-in-out;
+            }
+            &.open {
+              path{
+                opacity: 0;
+              }
+              line:nth-child(6){
+                transform: rotate(35deg) translate3d(8px, -8px, 0);
+              }
+              line:nth-child(4){
+                opacity: 0;
+              }
+              line:nth-child(5){
+                transform: rotate(-35deg) translate3d(-16px, 2px, 0);
+              }
+            }
+          }
+          .big-menu{
+            display: none;
+          }
+          .small-menu{
+            display: flex;
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: 70vh;
+            background: rgba(0,0,0,.9);
+            flex-direction: column;
+            padding: 60px 0 0;
+          }
+        }
+      }
+    }
+  }
   .fade-enter-active, .fade-leave-active {
     transition: all .7s ease-in-out;
   }

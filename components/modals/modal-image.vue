@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="modal-fade">
   <div class="wrapper" v-show="visible" @click.self="close()">
     <div class="image-holder">
       <slot></slot>
@@ -39,16 +39,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .9);
   display: flex;
   justify-content: center;
   .image-holder{
     width: 65%;
     max-height: 80%;
-    background-color: #fff;
+    background-color: transparent;
     margin: auto;
     padding: 0;
     border-radius: 5px;
@@ -62,17 +62,34 @@
     }
   }
 }
-.fade-enter-active {
-  animation: fadein .5s linear forwards;
+@media (max-width: 567px){
+  .wrapper{
+    .image-holder{
+      width: 85%;
+      max-height: 27%;
+    }
+  }
 }
-.fade-leave-active {
-  animation: fadeout .5s linear forwards;
+@media (min-width: 568px) and (max-width: 823px){
+  .wrapper{
+    .image-holder{
+      width: 70%;
+      max-height: 70%;
+    }
+  }
 }
-@keyframes fadein {
+/*ANIMATIONS*/
+.modal-fade-enter-active {
+  animation: modal-fadein .5s linear forwards;
+}
+.modal-fade-leave-active {
+  animation: modal-fadeout .5s linear forwards;
+}
+@keyframes modal-fadein {
   0% { opacity: 0 }
   100% { opacity: 1 }
 }
-@keyframes fadeout {
+@keyframes modal-fadeout {
   0% { opacity: 1 }
   100% { opacity: 0 }
 }

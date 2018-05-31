@@ -149,7 +149,7 @@ import loc from '~/components/stroi/loc.vue';
         position: absolute;
         top: 38%;
         left: 5%;
-        z-index: 100;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -223,6 +223,47 @@ import loc from '~/components/stroi/loc.vue';
       }
     }
   }
+  @media (max-width: 567px){
+    .container-fluid {
+      .wrapper{
+        padding-top: 20%;
+        .menu{
+          left: 1%;
+          top: 30%;
+          div{
+            .desc{
+              font-size: 11px;
+              line-height: 12px;
+              white-space: normal;
+              margin: 10px 0 0;
+              width: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px){
+    .container-fluid {
+      .wrapper{
+        padding-top: 8%;
+        .menu{
+          left: 1%;
+          top: 30%;
+          div{
+            .desc{
+              font-size: 11px;
+              line-height: 12px;
+              white-space: normal;
+              margin: 10px 0 0;
+              width: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*ANIMATIONS*/
   .slide-enter-active {
     animation: slide-in .5s;
   }

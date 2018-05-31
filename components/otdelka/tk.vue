@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h4 class="subtitle my-3">{{subpage.name}}</h4>
+    <h4 class="subtitle my-1 my-xl-3">{{subpage.name}}</h4>
     <div class="content">
-      <div class="description col-6">
+      <div class="description col-xl-6">
         <p>Многие посещают торговые центры целенаправленно за конкретными покупками и быстро покидают здание. Другие
-          могут бродить по зданию часами и проводят в них большую часть времени, поэтому внутренняя отделка торговых
+          могут бродить по зданию часами, поэтому внутренняя отделка торговых
           павильонов должна располагать и способствовать комфортным условиям нахождения.</p>
       </div>
-      <div class="image col-6" @click="openModal">
+      <div class="image col-xl-6" @click="openModal">
 
       </div>
     </div>
     <modalImage>
-      <img src="~/static/images/8.jpg" alt="">
+      <img class="img" src="~/static/images/8.jpg" alt="">
     </modalImage>
   </div>
 </template>
@@ -88,6 +88,75 @@
         opacity: 0;
         transition: all .5s ease-in-out;
       }
+    }
+  }
+  @media (max-width: 567px){
+    .content{
+      margin-top: 0;
+      margin-left: 19%;
+      height: 65vh;
+      padding-bottom: 0;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 80%;
+      .description{
+        padding: 0 0 0 20px;
+        p{
+          font-size: 14px;
+          line-height: 28px;
+        }
+      }
+      .image{
+        margin: 0 0 0 20px;
+        height: 40%;
+        width: auto;
+        &:hover{
+          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
+          background-size: 115% 105%;
+          &::before{
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .img{
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px){
+    .content{
+      margin-top: 0;
+      margin-left: 14%;
+      height: 50vh;
+      padding-bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 85%;
+      .description{
+        display: block;
+        padding: 0;
+        p{
+          font-size: 13px;
+          line-height: 26px;
+        }
+      }
+      .image{
+        width: 50%;
+        &:hover{
+          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
+          background-size: 115% 105%;
+          &::before{
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .img{
+      width: 100%;
+      height: auto;
+      margin: auto;
     }
   }
 </style>
