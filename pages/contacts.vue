@@ -174,6 +174,60 @@
       }
     }
   }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px){
+    .container-fluid {
+      .wrapper{
+        padding-top: 100px;
+        .content{
+          .info{
+            height: 50%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 824px) and (max-width: 1919px){
+    .container-fluid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .wrapper{
+        .title{
+          font-size: 3.5rem;
+        }
+        .content{
+          .info{
+            height: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.6rem;
+            p{
+              margin: 30px auto;
+            }
+          }
+          .form{
+            form{
+              width: 60%;
+              input{
+                font-size: 1.5rem;
+                height: 50px;
+              }
+              button{
+                font-size: 1.7rem;
+                height: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   /*ANIMATIONS*/
   .slide-enter-active {
     animation: slide-in .5s;

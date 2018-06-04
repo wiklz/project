@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-  <div class="wrapper" v-show="visible" @click.self="close()">
+  <div class="wrapper" v-show="visible" @click="close()">
     <div class="image-holder">
       <slot></slot>
     </div>
@@ -75,6 +75,26 @@
     .image-holder{
       width: 70%;
       max-height: 70%;
+    }
+  }
+}
+@media (min-width: 824px) and (max-width: 1919px){
+  .wrapper{
+    .image-holder{
+      width: 90%;
+      height: auto;
+      background-color: transparent;
+      margin: auto;
+      padding: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      img{
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
     }
   }
 }

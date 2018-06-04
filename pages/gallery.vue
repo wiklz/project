@@ -5,7 +5,7 @@
       <transition name="fadein">
         <div class="content">
             <div class="place" v-for="place in $store.state.places" :class="place.id" :id="place.id" :key="place.id"
-                 v-bind:style="'background: url(\'images/' + place.min + '\') no-repeat center;background-size: 100% auto;'">
+                 v-bind:style="'background:#000 url(\'images/' + place.min + '\') no-repeat center;background-size: 100% auto;'">
               <h4>{{place.name}}</h4>
             </div>
         </div>
@@ -115,7 +115,7 @@
             h4{
               height: 100%;
               width: 100%;
-              font-size: 18px;
+              font-size: 16px;
             }
             &:hover{
               box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
@@ -142,6 +142,53 @@
             }
             &:hover{
               box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 480px) and (max-height: 699px){
+    .container-fluid {
+      .wrapper {
+        .content{
+          .place{
+            width: 20%;
+            height: 115px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 700px){
+    .container-fluid {
+      .wrapper {
+        padding-top: 100px;
+        .content{
+          .place{
+            width: 30%;
+            height: 150px;
+            h4{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 824px) and (max-width: 1919px){
+    .container-fluid {
+      .wrapper {
+        .title {
+          font-size: 3.5rem;
+        }
+        .content{
+          margin-top: 0;
+          .place{
+            width: 280px;
+            height: 200px;
+            h4{
+              font-size: 1.9rem;
             }
           }
         }

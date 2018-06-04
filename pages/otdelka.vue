@@ -131,7 +131,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
         div{
           cursor: pointer;
           width: 30px;
@@ -227,12 +226,61 @@
           left: 1%;
           top: 30%;
           div{
+            &.active {
+              .desc {
+                font-size: 12px;
+                line-height: 12px;
+                white-space: normal;
+                margin: 15px 0 0;
+                width: 80px;
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px) and (max-height: 729px){
+
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 730px){
+    .container-fluid {
+      .wrapper {
+        padding-top: 150px;
+        .menu {
+          top: 40%;
+          div{
+            &.active {
+              .desc {
+                font-size: 14px;
+                line-height: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 824px) and (max-width: 1919px){
+    .container-fluid {
+      .wrapper{
+        .title{
+          font-size: 3.5rem;
+        }
+        .menu{
+          width: 50px;
+          height: 50%;
+          position: absolute;
+          top: 350px;
+          left: 2%;
+          z-index: 1;
+          div{
+            margin: 30px auto;
             .desc{
-              font-size: 11px;
-              line-height: 12px;
+              font-size: 1.3rem;
               white-space: normal;
               margin: 10px 0 0;
-              width: 80px;
             }
           }
         }
@@ -261,9 +309,9 @@
     animation: fades-out .5s;
   }
   @keyframes slides-in {
-    0% { transform: translateX(100%) }
-    50%{transform: translateX(100%)}
-    100% { transform: translateX(0) }
+    0% { transform: translateX(100%); height: 0; }
+    50%{transform: translateX(100%); height: 0;}
+    100% { transform: translateX(0); }
   }
   @keyframes fades-out {
     0% { opacity: 1; }

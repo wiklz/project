@@ -89,6 +89,11 @@
       }
     }
   }
+  .img{
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
   @media (max-width: 567px){
     .content{
       margin-top: 0;
@@ -136,13 +141,16 @@
       .description{
         display: block;
         padding: 0;
+        margin: auto;
         p{
           font-size: 13px;
           line-height: 26px;
         }
       }
       .image{
-        width: 50%;
+        width: 70%;
+        margin: auto 1%;
+        min-height: 180px;
         &:hover{
           box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
           background-size: 115% 105%;
@@ -156,6 +164,105 @@
       width: 100%;
       height: auto;
       margin: auto;
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px) and (max-height: 729px){
+    .content{
+      margin-top: 5%;
+      margin-left: 14%;
+      height: 50vh;
+      padding-bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 85%;
+      .description{
+        display: block;
+        padding: 0;
+        margin: auto;
+        p{
+          font-size: 13px;
+          line-height: 26px;
+        }
+      }
+      .image{
+        width: 70%;
+        margin: auto 1%;
+        min-height: 180px;
+        &:hover{
+          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
+          background-size: 115% 105%;
+          &::before{
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .img{
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 730px){
+    .content{
+      margin-top: 100px;
+      margin-left: 14%;
+      height: 50vh;
+      padding-bottom: 0;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 85%;
+      .description{
+        display: block;
+        padding: 0;
+        margin: auto;
+        p{
+          font-size: 16px;
+          line-height: 32px;
+        }
+      }
+      .image{
+        width: 100%;
+        margin: auto;
+        min-height: 350px;
+        &:hover{
+          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
+          background-size: 115% 105%;
+          &::before{
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .img{
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+  }
+  @media (min-width: 824px) and (max-width: 1919px){
+    .subtitle{
+      font-size: 2rem;
+    }
+    .content{
+      margin-top: 0;
+      margin-left: 19%;
+      width: 79%;
+      padding: 0;
+      .description{
+        margin: auto 10px;
+        padding: 0;
+        p{
+          line-height: 2.4rem;
+          font-size: 1.6rem;
+        }
+      }
+      .image{
+        height: 50%;
+        margin: auto;
+        background-size: auto 100%;
+        box-shadow:  rgba(0, 0, 0, .1) 0 0 0 1000px inset;
+      }
     }
   }
 </style>

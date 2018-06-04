@@ -5,7 +5,7 @@
       <b-carousel id="carousel1"
                   controls
                   indicators
-                  background="#000"
+                  background="transparent"
                   :interval="0"
                   v-model="slide"
                   @sliding-start="onSlideStart"
@@ -133,6 +133,7 @@
   flex-direction: column;
   justify-content: center;
   padding-bottom: 6%;
+  background: rgba(0,0,0,.9);
   .gallerycarousel{
     height:auto;
     max-height: 90vh;
@@ -181,6 +182,37 @@
     .gallerycarousel{
       height:100%;
       width: auto;
+    }
+  }
+}
+@media (min-width: 824px) and (max-width: 1919px){
+  .wrapper{
+    .gallerycarousel{
+      height:auto;
+      max-height: 90vh;
+      max-width: 90%;
+      margin: auto;
+      transition: all .3s ease-in-out;
+
+      .carousel.slide{
+        width: 100%;
+        max-height: 90vh;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .carousel-inner{
+          width: 100%;
+          max-height: 90vh;
+          .carousel-item{
+            width: 100%;
+            max-height: 90vh;
+            img{
+              width: 100%;
+              max-height: 90vh;
+            }
+          }
+        }
+      }
     }
   }
 }

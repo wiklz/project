@@ -107,7 +107,7 @@
       margin: 0;
       background: #000 url("/static/images/doors.jpeg") repeat-x center;
       background-size: auto 100%;
-      box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
+      box-shadow:  rgba(0, 0, 0, .7) 0 0 0 1000px inset;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -162,7 +162,6 @@
               }
               &-active{
                 opacity: 1;
-                color: red;
               }
             }
           }
@@ -284,6 +283,34 @@
             background: rgba(0,0,0,.9);
             flex-direction: column;
             padding: 60px 0 0;
+          }
+        }
+      }
+    }
+  }
+  @media (min-height: 700px){
+    html {
+      body{
+        .menu {
+          .small-menu{
+            height: 300px;
+            }
+          }
+        }
+      }
+  }
+  @media (min-width: 824px) and (max-width: 1919px){
+    html {
+      body{
+        box-shadow:  rgba(0, 0, 0, .7) 0 0 0 1000px inset;
+        .menu {
+          ul{
+            width: 70%;
+            li{
+              .menu-link{
+                font-size: 1.3rem;
+              }
+            }
           }
         }
       }

@@ -24,19 +24,19 @@
           <span class="desc">{{subpages[4].name}}</span>
         </div>
       </div>
-      <transition name="slides" mode="out-in">
+      <transition name="content">
         <brus v-show="subpages[0].visible"/>
       </transition>
-      <transition name="slides" mode="out-in">
+      <transition name="content">
         <gaz v-show="subpages[1].visible"/>
       </transition>
-      <transition name="slides" mode="out-in">
+      <transition name="content">
         <fund v-show="subpages[2].visible"/>
       </transition>
-      <transition name="slides" mode="out-in">
+      <transition name="content">
         <ograda v-show="subpages[3].visible"/>
       </transition>
-      <transition name="slides" mode="out-in">
+      <transition name="content">
         <loc v-show="subpages[4].visible"/>
       </transition>
     </div>
@@ -236,7 +236,7 @@ import loc from '~/components/stroi/loc.vue';
               line-height: 12px;
               white-space: normal;
               margin: 10px 0 0;
-              width: 80px;
+              width: 75px;
             }
           }
         }
@@ -251,12 +251,63 @@ import loc from '~/components/stroi/loc.vue';
           left: 1%;
           top: 30%;
           div{
+            margin: 25px auto;
+            &.active {
+              .desc {
+                font-size: 12px;
+                line-height: 12px;
+                white-space: normal;
+                margin: 10px 0 0;
+                width: 80px;
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px) and (max-height: 729px){
+
+  }
+  @media (min-width: 568px) and (max-width: 823px) and (min-height: 730px){
+    .container-fluid {
+      .wrapper {
+        padding-top: 150px;
+        .menu {
+          top: 40%;
+          div{
+            &.active {
+              .desc {
+                font-size: 14px;
+                line-height: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 824px) and (max-width: 1919px){
+    .container-fluid {
+      .wrapper{
+        .title{
+          font-size: 3.5rem;
+        }
+        .menu{
+          width: 50px;
+          height: 50%;
+          position: absolute;
+          top: 350px;
+          left: 2%;
+          z-index: 1;
+          div{
+            margin: 30px auto;
             .desc{
-              font-size: 11px;
-              line-height: 12px;
+              font-size: 1.3rem;
               white-space: normal;
               margin: 10px 0 0;
-              width: 80px;
+              width: 150px;
             }
           }
         }
@@ -278,20 +329,24 @@ import loc from '~/components/stroi/loc.vue';
     0% { transform: translateX(0) }
     100% { transform: translateX(-100%) }
   }
-  .slides-enter-active {
+  .content-enter-active {
     animation: slides-in 1s;
   }
-  .slides-leave-active {
+  .content-leave-active {
     animation: fades-out .5s;
   }
   @keyframes slides-in {
-    0% { transform: translateX(100%) }
-    50%{transform: translateX(100%)}
-    100% { transform: translateX(0) }
+    0% { transform: translateX(100%); height: 0; }
+    50%{transform: translateX(100%); height: 0;}
+    100% { transform: translateX(0); }
   }
   @keyframes fades-out {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   @keyframes submenu-animation {
     0%{
