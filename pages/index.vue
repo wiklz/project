@@ -37,12 +37,13 @@ export default {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    font-size: 100%;
     h1{
-      font-size: 7rem;
+      font-size: 8em;
       animation: pulse 3s ease-in 10s infinite alternate;
     }
     h3{
-      font-size: 2.1rem;
+      font-size: 2.3em;
     }
   }
 }
@@ -50,11 +51,7 @@ export default {
   .container-fluid {
     .header{
       h1{
-        font-size: 5rem;
         animation: none;
-      }
-      h3{
-        font-size: 2.1rem;
       }
     }
   }
@@ -63,11 +60,7 @@ export default {
   .container-fluid {
     .header{
       h1{
-        font-size: 5rem;
         animation: none;
-      }
-      h3{
-        font-size: 2.1rem;
       }
     }
   }

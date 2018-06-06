@@ -52,6 +52,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 100%;
     .wrapper {
       color: #ccc;
       width: 100%;
@@ -63,6 +64,7 @@
       padding-top: 180px;
       .title {
         text-decoration: underline;
+        font-size: 2.5em;
       }
       .content{
         margin-top: 50px;
@@ -83,6 +85,7 @@
           cursor: pointer;
           transition: all .5s ease-in-out;
           h4{
+            font-size: 1.3em;
             height: 100%;
             width: 100%;
             vertical-align: middle;
@@ -115,7 +118,6 @@
             h4{
               height: 100%;
               width: 100%;
-              font-size: 16px;
             }
             &:hover{
               box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
@@ -138,7 +140,6 @@
             h4{
               height: 100%;
               width: 100%;
-              font-size: 15px;
             }
             &:hover{
               box-shadow:  rgba(0, 0, 0, .7) 0 0 0 500px inset;
@@ -168,28 +169,20 @@
           .place{
             width: 30%;
             height: 150px;
-            h4{
-              font-size: 16px;
-            }
           }
         }
       }
     }
   }
-  @media (min-width: 824px) and (max-width: 1919px){
+  @media (min-width: 824px) and (max-width: 1366px){
     .container-fluid {
       .wrapper {
-        .title {
-          font-size: 3.5rem;
-        }
+        padding-top: 120px;
         .content{
           margin-top: 0;
           .place{
-            width: 280px;
-            height: 200px;
-            h4{
-              font-size: 1.9rem;
-            }
+            width: 260px;
+            height: 170px;
           }
         }
       }

@@ -93,6 +93,7 @@
     padding: 0;
     height: 100vh;
     color: #333;
+    font-size: 100%;
     h1, h2, h3, h4, h5, h6{
       font-family: 'Roboto Slab', serif;
       font-weight: 700;
@@ -149,6 +150,7 @@
             }
             .menu-link{
               font-family: 'Roboto Slab', serif;
+              font-size: 1.3em;
               font-weight: 400;
               opacity: .7;
               color: #fff;
@@ -299,18 +301,13 @@
         }
       }
   }
-  @media (min-width: 824px) and (max-width: 1919px){
+  @media (min-width: 824px) and (max-width: 1366px){
     html {
       body{
         box-shadow:  rgba(0, 0, 0, .7) 0 0 0 1000px inset;
         .menu {
           ul{
             width: 70%;
-            li{
-              .menu-link{
-                font-size: 1.3rem;
-              }
-            }
           }
         }
       }

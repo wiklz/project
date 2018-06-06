@@ -48,6 +48,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 100%;
     .wrapper{
       color: #ccc;
       width: 100%;
@@ -59,6 +60,7 @@
       padding-top: 180px;
       .title{
         text-decoration: underline;
+        font-size: 2.5em;
       }
       .content{
         width: 100%;
@@ -71,6 +73,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          font-size: 1.1em;
         }
         .form{
           display: flex;
@@ -91,6 +94,7 @@
               color: #333333;
               text-align: center;
               opacity: .8;
+              font-size: 1.1em;
             }
             button{
               cursor: pointer;
@@ -100,10 +104,9 @@
               border: none;
               background-color: #000;
               color: #ffffff;
-              padding: 5px 0;
               font-family: 'Roboto Slab', serif;
               font-weight: 700;
-              font-size: 20px;
+              font-size: 1.5em;
               transition: all .5s ease-in-out;
               &:hover{
                 background: #fff;
@@ -127,7 +130,6 @@
           .info{
             height: 40%;
             p{
-              font-size: 13px;
               margin: 0 auto;
             }
           }
@@ -189,24 +191,21 @@
       }
     }
   }
-  @media (min-width: 824px) and (max-width: 1919px){
+  @media (min-width: 824px) and (max-width: 1366px){
     .container-fluid {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       .wrapper{
-        .title{
-          font-size: 3.5rem;
-        }
+        padding-top: 120px;
         .content{
           .info{
-            height: 50%;
+            height: 40%;
             margin: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-size: 1.6rem;
             p{
               margin: 30px auto;
             }
@@ -215,11 +214,9 @@
             form{
               width: 60%;
               input{
-                font-size: 1.5rem;
                 height: 50px;
               }
               button{
-                font-size: 1.7rem;
                 height: 70px;
               }
             }

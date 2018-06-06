@@ -105,6 +105,7 @@
 
 <style lang="scss" scoped>
   .container-fluid {
+    font-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +121,7 @@
       padding-top: 180px;
       .title{
         text-decoration: underline;
+        font-size: 2.5em;
       }
       .menu{
         width: 50px;
@@ -167,6 +169,7 @@
               animation: desc 1.75s linear forwards;
             }
             & .desc{
+              font-size: .9em;
               opacity: 1;
             }
             & .link{
@@ -186,7 +189,6 @@
             transition: all .5s ease-in-out;
           }
           .desc{
-            font-size: 12px;
             vertical-align: middle;
             position: absolute;
             white-space: nowrap;
@@ -207,7 +209,6 @@
           top: 30%;
           div{
             .desc{
-              font-size: 11px;
               line-height: 12px;
               white-space: normal;
               margin: 10px 0 0;
@@ -228,7 +229,6 @@
           div{
             &.active {
               .desc {
-                font-size: 12px;
                 line-height: 12px;
                 white-space: normal;
                 margin: 15px 0 0;
@@ -253,7 +253,6 @@
           div{
             &.active {
               .desc {
-                font-size: 14px;
                 line-height: 14px;
               }
             }
@@ -262,25 +261,15 @@
       }
     }
   }
-  @media (min-width: 824px) and (max-width: 1919px){
+  @media (min-width: 824px) and (max-width: 1366px){
     .container-fluid {
       .wrapper{
-        .title{
-          font-size: 3.5rem;
-        }
+        padding-top: 140px;
         .menu{
-          width: 50px;
-          height: 50%;
-          position: absolute;
-          top: 350px;
-          left: 2%;
-          z-index: 1;
           div{
-            margin: 30px auto;
             .desc{
-              font-size: 1.3rem;
-              white-space: normal;
               margin: 10px 0 0;
+              width: 150px;
             }
           }
         }

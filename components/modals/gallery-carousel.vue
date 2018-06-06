@@ -1,6 +1,6 @@
 <template>
   <transition name="slider" mode="out-in">
-  <div class="wrapper" v-show="visible" @click.self="close()">
+  <div class="slider-wrapper" v-show="visible" @click.self="close()">
     <div class="gallerycarousel">
       <b-carousel id="carousel1"
                   controls
@@ -14,12 +14,12 @@
 
         <b-carousel-slide v-if="slider[0]" :img-src="'images/' + image" v-for="image in $store.state.places[0].images" :key="image"></b-carousel-slide>
         <b-carousel-slide v-if="slider[1]" :img-src="'images/' + image" v-for="image in $store.state.places[1].images" :key="image"></b-carousel-slide>
-        <b-carousel-slide v-if="slider[2]" :img-src="'images/' + image" v-for="image in $store.state.places[2].images" :key="image"></b-carousel-slide>
+        <b-carousel-slide v-if="slider[2]" class="vertical-img" :img-src="'images/' + image" v-for="image in $store.state.places[2].images" :key="image"></b-carousel-slide>
         <b-carousel-slide v-if="slider[3]" :img-src="'images/' + image" v-for="image in $store.state.places[3].images" :key="image"></b-carousel-slide>
         <b-carousel-slide v-if="slider[4]" :img-src="'images/' + image" v-for="image in $store.state.places[4].images" :key="image"></b-carousel-slide>
         <b-carousel-slide v-if="slider[5]" :img-src="'images/' + image" v-for="image in $store.state.places[5].images" :key="image"></b-carousel-slide>
         <b-carousel-slide v-if="slider[6]" :img-src="'images/' + image" v-for="image in $store.state.places[6].images" :key="image"></b-carousel-slide>
-        <b-carousel-slide v-if="slider[7]" :img-src="'images/' + image" v-for="image in $store.state.places[7].images" :key="image"></b-carousel-slide>
+        <b-carousel-slide v-if="slider[7]" class="vertical-img" :img-src="'images/' + image" v-for="image in $store.state.places[7].images" :key="image"></b-carousel-slide>
 
       </b-carousel>
 
@@ -122,7 +122,7 @@
 </script>
 
 <style lang="scss" scoped>
-.wrapper{
+.slider-wrapper{
   position: absolute;
   top: 0;
   left: 0;
@@ -132,7 +132,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 6%;
   background: rgba(0,0,0,.9);
   .gallerycarousel{
     height:auto;
@@ -148,22 +147,18 @@
       overflow: hidden;
 
       .carousel-inner{
-        width: 100%;
         max-height: 90vh;
-        .carousel-item{
-          width: 100%;
-          max-height: 90vh;
-          img{
-            width: 100%;
-            max-height: 90vh;
-          }
-        }
+        max-width: 80vw;
+      }
+      .vertical-img {
+        max-height: 90vh;
+        max-width: 30vw;
       }
     }
   }
 }
 @media (max-width: 567px){
-  .wrapper{
+  .slider-wrapper{
     padding: 0;
     background: rgba(0,0,0, .7);
     .gallerycarousel{
@@ -174,7 +169,7 @@
   }
 }
 @media (min-width: 568px) and (max-width: 823px){
-  .wrapper{
+  .slider-wrapper{
     z-index: 100;
     padding: 0 !important;
     justify-content: center !important;
@@ -185,37 +180,7 @@
     }
   }
 }
-@media (min-width: 824px) and (max-width: 1919px){
-  .wrapper{
-    .gallerycarousel{
-      height:auto;
-      max-height: 90vh;
-      max-width: 90%;
-      margin: auto;
-      transition: all .3s ease-in-out;
 
-      .carousel.slide{
-        width: 100%;
-        max-height: 90vh;
-        border-radius: 10px;
-        overflow: hidden;
-
-        .carousel-inner{
-          width: 100%;
-          max-height: 90vh;
-          .carousel-item{
-            width: 100%;
-            max-height: 90vh;
-            img{
-              width: 100%;
-              max-height: 90vh;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 /*ANIMATIONS*/
 .slider-enter-active {
   animation: slider-in 1s;
