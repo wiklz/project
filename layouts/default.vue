@@ -237,25 +237,24 @@
     }
   }
 }
-  @media (min-width: 568px) and (max-width: 1024px){
+  @media (min-width: 568px) and (max-width: 1023px){
     html {
+      height:100vh;
+      overflow: hidden;
       body{
+        height: 100%;
         .menu {
-          height: 100px;
+          z-index: 100;
           .logo{
             margin: auto;
-            width: auto;
-            img{
-              height: 80px;
-            }
           }
           .menubtn{
             position: absolute;
             display: block;
-            top: 25px;
-            right: 25px;
+            top: 15px;
+            right: 15px;
             z-index: 100;
-            width: 60px;
+            width: 40px;
             opacity: .5;
             line, path{
               transition: opacity .5s ease-in-out, transform .7s ease-in-out;
@@ -279,22 +278,32 @@
             display: none;
           }
           .small-menu{
-            font-size: 1.5em;
             display: flex;
             position: absolute;
             z-index: 100;
             width: 100%;
-            height: 70vh;
+            height: 55vh;
             background: rgba(0,0,0,.9);
             flex-direction: column;
+            justify-content: space-between;
             padding: 60px 0 0;
+            li{
+              margin: auto;
+              list-style: none;
+              .nuxt-link-exact-active{
+
+              }
+              .menu-link{
+
+              }
+            }
           }
         }
       }
     }
   }
   /*tablets*/
-  @media (min-width: 1025px) and (max-width: 1366px){
+  @media (min-width: 1024px) and (max-width: 1366px){
     html {
       body{
         .menu {

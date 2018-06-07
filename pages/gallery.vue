@@ -5,7 +5,7 @@
       <transition name="fadein">
         <div class="content">
             <div class="place" v-for="place in $store.state.places" :class="place.id" :id="place.id" :key="place.id"
-                 v-bind:style="'background:#000 url(\'images/' + place.min + '\') no-repeat center;background-size: 100% auto;'">
+                 v-bind:style="'background:#000 url(\'images/' + place.min + '\') no-repeat center;background-size: auto 100%;'">
               <h4>{{place.name}}</h4>
             </div>
         </div>
@@ -95,7 +95,7 @@
           }
           &:hover{
             box-shadow:  rgba(0, 0, 0, 0) 0 0 0 500px inset;
-            background-size: 115% auto !important;
+            background-size: auto 120% !important;
             h4{
               opacity: 0;
             }
@@ -123,7 +123,7 @@
             }
             &:hover{
               box-shadow:  none;
-              background-size: 100% auto!important;
+              background-size: auto 100%!important;
               h4{
                 opacity: 0;
               }
@@ -145,6 +145,7 @@
             margin: 5px 10px;
             width: 40%;
             height: 20%;
+            background-size: 100% auto!important;
             h4{
               font-size: 1.2em;
             }
@@ -172,6 +173,7 @@
             margin: 5px;
             width: 23%;
             height: 35%;
+            background-size: 100% auto!important;
             h4{
               font-size: 1.2em;
             }
