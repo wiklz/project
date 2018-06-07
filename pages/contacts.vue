@@ -33,7 +33,7 @@
             title: 'Контакты'
           },
           contacts: {
-            adress: 'Санкт-Петербург Северный проспект д.5 к.3 офис 300',
+            adress: 'Санкт-Петербург Северный проспект, д.5, к.3, офис 300',
             phone: '+7 (812) 347-76-08',
             email: 'info@brigadir.ru',
           }
@@ -118,30 +118,73 @@
       }
     }
   }
-  @media (max-width: 567px){
+  /*mobiles*/
+  @media (max-width: 320px){
     .container-fluid {
+      font-size: 70%;
       .wrapper{
-        padding-top: 30%;
+        padding-top: 100px;
         .content{
+          margin: auto;
           width: 100%;
-          height: 65vh;
+          height: 70vh;
           display: flex;
           flex-direction: column-reverse;
           .info{
-            height: 40%;
-            p{
-              margin: 0 auto;
-            }
+            justify-content: center;
+            font-size: 1.4em;
           }
           .form{
             form{
-              width: 60%;
+              width: 50%;
               input{
                 margin: 5px auto;
+                font-size: 1em;
               }
               button{
-                margin: 5px auto 0;
-                height: 40px;
+                margin: 10px auto;
+                font-size: 1.6em;
+                &:hover{
+                  background: #000;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 321px) and (max-width: 567px){
+    .container-fluid {
+      font-size: 70%;
+      .wrapper{
+        padding-top: 100px;
+        .content{
+          margin: 40px auto 0;
+          width: 100%;
+          height: 80vh;
+          display: flex;
+          flex-direction: column-reverse;
+          .info{
+            justify-content: center;
+            font-size: 1.5em;
+            height: 45%;
+          }
+          .form{
+            form{
+              width: 50%;
+              input{
+                margin: 8px auto;
+                font-size: 1.2em;
+              }
+              button{
+                margin: 15px auto;
+                font-size: 2em;
+                &:hover{
+                  background: #000;
+                  color: #fff;
+                }
               }
             }
           }
@@ -151,24 +194,39 @@
   }
   @media (min-width: 568px) and (max-width: 823px){
     .container-fluid {
+      font-size: 70%;
       .wrapper{
         padding-top: 50px;
         .content{
-          height: 65vh;
+          margin: auto;
+          height: 70vh;
           .info{
-            height: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            /*justify-content: space-around;*/
+            font-size: 1.3em;
           }
           .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             form{
+              display: flex;
+              flex-direction: column;
               width: 70%;
+              margin: auto;
               input{
                 margin: 5px auto;
-                padding: 5px;
-                height: 40px;
               }
               button{
-                margin: 5px auto -5px;
-                height: 40px;
+                margin: 15px auto;
+                font-size: 1.7em;
+                &:hover{
+                  background: #000;
+                  color: #fff;
+                }
               }
             }
           }
@@ -176,48 +234,43 @@
       }
     }
   }
-  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px){
+
+  /*tablets*/
+  @media (min-width: 568px) and (max-width: 1024px) and (min-height: 520px) and (max-height: 1364px){
     .container-fluid {
+      font-size: 90%;
       .wrapper{
-        padding-top: 100px;
+        padding-top: 15vh;
         .content{
+          margin: 5vh auto;
+          height: 60vh;
           .info{
             height: 50%;
             margin: auto;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            /*justify-content: space-around;*/
+            font-size: 1.25em;
           }
-        }
-      }
-    }
-  }
-  @media (min-width: 824px) and (max-width: 1366px){
-    .container-fluid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      .wrapper{
-        padding-top: 120px;
-        .content{
-          .info{
-            height: 40%;
-            margin: auto;
+          .form{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            p{
-              margin: 30px auto;
-            }
-          }
-          .form{
             form{
-              width: 60%;
+              display: flex;
+              flex-direction: column;
+              width: 70%;
+              margin: auto;
               input{
-                height: 50px;
+                margin: 10px auto;
               }
               button{
-                height: 70px;
+                margin: 20px auto;
+                font-size: 2em;
+                &:hover{
+                  background: #000;
+                  color: #fff;
+                }
               }
             }
           }
@@ -225,6 +278,53 @@
       }
     }
   }
+  @media (min-width: 568px) and (max-width: 1024px) and (min-height: 1365px){
+    .container-fluid {
+      font-size: 100%;
+      .wrapper{
+        padding-top: 15vh;
+        .content{
+          margin: 5vh auto;
+          height: 60vh;
+          .info{
+            height: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            /*justify-content: space-around;*/
+            p{
+              font-size: 1.6em;
+              line-height: 2em;
+            }
+          }
+          .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            form{
+              display: flex;
+              flex-direction: column;
+              width: 80%;
+              margin: auto;
+              input{
+                margin: 15px auto;
+                font-size: 1.6em;
+              }
+              button{
+                margin: 25px auto;
+                font-size: 2.5em;
+                &:hover{
+                  background: #000;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   /*ANIMATIONS*/
   .slide-enter-active {
     animation: slide-in .5s;

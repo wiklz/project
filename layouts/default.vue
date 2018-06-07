@@ -171,6 +171,7 @@
       }
     }
   }
+  /*mobiles*/
   @media (max-width: 567px){
   html {
     height:100vh;
@@ -236,24 +237,25 @@
     }
   }
 }
-  @media (min-width: 568px) and (max-width: 823px){
+  @media (min-width: 568px) and (max-width: 1024px){
     html {
-      height:100vh;
-      overflow: hidden;
       body{
-        height: 100%;
         .menu {
-          z-index: 100;
+          height: 100px;
           .logo{
             margin: auto;
+            width: auto;
+            img{
+              height: 80px;
+            }
           }
           .menubtn{
             position: absolute;
             display: block;
-            top: 15px;
-            right: 15px;
+            top: 25px;
+            right: 25px;
             z-index: 100;
-            width: 40px;
+            width: 60px;
             opacity: .5;
             line, path{
               transition: opacity .5s ease-in-out, transform .7s ease-in-out;
@@ -277,6 +279,7 @@
             display: none;
           }
           .small-menu{
+            font-size: 1.5em;
             display: flex;
             position: absolute;
             z-index: 100;
@@ -290,28 +293,31 @@
       }
     }
   }
+  /*tablets*/
+  @media (min-width: 1025px) and (max-width: 1366px){
+    html {
+      body{
+        .menu {
+          .big-menu{
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+
+
+  /*Menu media*/
   @media (min-height: 700px){
     html {
       body{
         .menu {
           .small-menu{
-            height: 300px;
+            height: 350px;
             }
           }
         }
       }
-  }
-  @media (min-width: 824px) and (max-width: 1366px){
-    html {
-      body{
-        box-shadow:  rgba(0, 0, 0, .7) 0 0 0 1000px inset;
-        .menu {
-          ul{
-            width: 70%;
-          }
-        }
-      }
-    }
   }
   .fade-enter-active, .fade-leave-active {
     transition: all .7s ease-in-out;

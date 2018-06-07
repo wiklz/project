@@ -44,24 +44,21 @@ export default {
     }
     h3{
       font-size: 2.3em;
+      padding: 0 20px;
     }
   }
 }
 @media (max-width: 567px){
   .container-fluid {
     .header{
-      h1{
-        animation: none;
-      }
+      font-size: 60%;
     }
   }
 }
 @media (min-width: 568px) and (max-width: 823px){
   .container-fluid {
     .header{
-      h1{
-        animation: none;
-      }
+      font-size: 80%;
     }
   }
 }

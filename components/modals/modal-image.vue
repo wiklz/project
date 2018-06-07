@@ -62,6 +62,7 @@
     }
   }
 }
+/*mobiles*/
 @media (max-width: 567px){
   .wrapper{
     .image-holder{
@@ -78,23 +79,23 @@
     }
   }
 }
-@media (min-width: 824px) and (max-width: 1919px){
+/*tablets*/
+/*tablets*/
+@media (min-width: 568px) and (max-width: 1024px) and (min-height: 520px){
   .wrapper{
     .image-holder{
-      width: 90%;
-      height: auto;
-      background-color: transparent;
-      margin: auto;
-      padding: 0;
-      border-radius: 5px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      img{
-        width: 100%;
-        height: auto;
-        margin: auto;
-      }
+      width: 90vw;
+      max-width: 750px;
+      max-height: 390px;
+    }
+  }
+}
+@media (min-width: 1025px) and (max-width: 1366px){
+  .wrapper{
+    .image-holder{
+      width: 90vw;
+      max-width: 1200px;
+      max-height: 700px;
     }
   }
 }

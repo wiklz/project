@@ -102,157 +102,173 @@
         }
       }
     }
+    .img{
+      width: 110%;
+      height: auto;
+      margin: auto;
+    }
   }
-  .img{
-    width: 110%;
-    height: auto;
-    margin: auto;
-  }
-  @media (max-width: 567px){
-    .content{
-      margin-top: 0;
-      margin-left: 19%;
-      height: 65vh;
-      padding-bottom: 0;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 80%;
-      .description{
-        padding: 0 0 0 20px;
-      }
-      .image{
-        margin: 0 0 0 20px;
-        height: 40%;
-        width: auto;
-        &:hover{
-          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
-          background-size: 115% 105%;
+  /*mobiles*/
+  @media (max-width: 320px){
+    .brus{
+      .content{
+        margin-top: 0;
+        height: 60vh;
+        flex-direction: column;
+        margin-left: 23.4%;
+        width: 75%;
+        .description{
+          padding: 0;
+          p{
+            font-size: 1.1em;
+            line-height: 1.5em;
+          }
+        }
+        .image{
+          &:hover{
+            background-size: 115% 105%;
+            box-shadow:  none;
+            &::before{
+              opacity: 0;
+            }
+          }
           &::before{
-            opacity: 0;
+            display: none;
           }
         }
       }
     }
-    .img{
-      width: 100%;
-      height: auto;
-      margin: auto;
+  }
+  @media (min-width: 321px) and (max-width: 567px){
+    .brus{
+      .content{
+        margin-top: 50px;
+        height: 50vh;
+        flex-direction: column;
+        .description{
+          p{
+            font-size: 1.2em;
+            line-height: 1.6em;
+          }
+        }
+        .image{
+          &:hover{
+            background-size: 115% 105%;
+            box-shadow:  none;
+            &::before{
+              opacity: 0;
+            }
+          }
+          &::before{
+            display: none;
+          }
+        }
+      }
     }
   }
   @media (min-width: 568px) and (max-width: 823px){
-    .content{
-      margin-top: 0;
-      margin-left: 14%;
-      height: 50vh;
-      padding-bottom: 0;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 85%;
-      .description{
-        display: block;
-        padding: 0;
-        margin: auto;
+    .brus{
+      font-size: 90%;
+      .subtitle{
+        font-size: 1.8em;
       }
-      .image{
-        width: 70%;
-        margin: auto 1%;
-        min-height: 180px;
-        &:hover{
-          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
-          background-size: 115% 105%;
+      .content{
+        margin-top: 20px;
+        margin-left: 15%;
+        width: 80%;
+        height: 50vh;
+        .description{
+          margin: auto 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: left;
+          padding: 0;
+          height: 100%;
+          p{
+            font-size: 1.2em;
+            line-height: 1.8em;
+          }
+        }
+        .image{
+          &:hover{
+            background-size: 115% 105%;
+            box-shadow:  none;
+            &::before{
+              opacity: 0;
+            }
+          }
           &::before{
-            opacity: 0;
+            display: none;
           }
         }
       }
     }
-    .img{
-      width: 100%;
-      height: auto;
-      margin: auto;
-    }
   }
-  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px) and (max-height: 729px){
-    .content{
-      margin-top: 5%;
-      margin-left: 14%;
-      height: 50vh;
-      padding-bottom: 0;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 85%;
-      .description{
-        display: block;
-        padding: 0;
-        margin: auto;
+
+  /*tablets*/
+  @media (min-width: 568px) and (max-width: 1024px) and (min-height: 520px){
+    .brus{
+      font-size: 100%;
+      .subtitle{
+        font-size: 1.8em;
       }
-      .image{
-        width: 70%;
-        margin: auto 1%;
-        min-height: 180px;
-        &:hover{
-          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
-          background-size: 115% 105%;
-          &::before{
-            opacity: 0;
+      .content{
+        margin-top: 5vh;
+        margin-left: 12%;
+        width: 85%;
+        height: 60vh;
+        .description{
+          padding: 0 10px 0 0;
+          p{
+            font-size: 1.3em;
+            line-height: 1.85em;
           }
         }
+        .image{
+          display: flex;
+          height: 100%;
+          max-height: 300px;
+          transition: none;
+        }
       }
-    }
-    .img{
-      width: 100%;
-      height: auto;
-      margin: auto;
-    }
-  }
-  @media (min-width: 568px) and (max-width: 823px) and (min-height: 730px){
-    .content{
-      margin-top: 100px;
-      margin-left: 14%;
-      height: 50vh;
-      padding-bottom: 0;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 85%;
-      .description{
-        display: block;
-        padding: 0;
-        margin: auto;
-      }
-      .image{
+      .img{
         width: 100%;
+        height: auto;
         margin: auto;
-        min-height: 350px;
-        &:hover{
-          box-shadow:  rgba(0, 0, 0, .1) 0 0 0 500px inset;
-          background-size: 115% 105%;
-          &::before{
-            opacity: 0;
-          }
-        }
       }
-    }
-    .img{
-      width: 100%;
-      height: auto;
-      margin: auto;
     }
   }
-  @media (min-width: 824px) and (max-width: 1366px){
-    .content{
-      margin-top: 0;
-      margin-left: 19%;
-      width: 79%;
-      padding: 0;
-      .description{
-        margin: auto 10px;
-        padding: 0;
+  @media (min-width: 568px) and (max-width: 1024px) and (min-height: 1365px){
+    .brus{
+      font-size: 110%;
+      .subtitle{
+        font-size: 1.8em;
       }
-      .image{
-        height: 60%;
+      .content{
+        margin-top: 5vh;
+        margin-left: 15%;
+        width: 80%;
+        height: 65vh;
+        flex-direction: column;
+        .description{
+          padding: 0 10px 0 0;
+          p{
+            font-size: 1.5em;
+            line-height: 2.25em;
+          }
+        }
+        .image{
+          display: flex;
+          height: 100%;
+          max-height: 550px;
+          transition: none;
+        }
+      }
+      .img{
+        width: 100%;
+        height: auto;
         margin: auto;
-        background-size: 100% auto;
-        box-shadow:  rgba(0, 0, 0, .1) 0 0 0 1000px inset;
       }
     }
   }

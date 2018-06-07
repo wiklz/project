@@ -197,6 +197,7 @@ import loc from '~/components/stroi/loc.vue';
             & .desc{
               opacity: 1;
               font-size: .9em;
+              line-height: 1.35em;
             }
             & .link{
               width: 45px;
@@ -226,77 +227,147 @@ import loc from '~/components/stroi/loc.vue';
       }
     }
   }
+
+  /*mobiles*/
   @media (max-width: 567px){
     .container-fluid {
+      font-size: 70%;
       .wrapper{
-        padding-top: 20%;
+        padding-top: 100px;
         .menu{
+          height: 30vh;
+          top: 50%;
+          margin-top: -15vh;
           left: 1%;
-          top: 30%;
-          div{
-            .desc{
-              line-height: 12px;
-              white-space: normal;
-              margin: 10px 0 0;
-              width: 75px;
-            }
-          }
-        }
-      }
-    }
-  }
-  @media (min-width: 568px) and (max-width: 823px){
-    .container-fluid {
-      .wrapper{
-        padding-top: 8%;
-        .menu{
-          left: 1%;
-          top: 30%;
           div{
             margin: 25px auto;
-            &.active {
-              .desc {
-                line-height: 12px;
-                white-space: normal;
-                margin: 10px 0 0;
-                width: 80px;
-                left: -8px;
-              }
+            .desc{
+              white-space: normal;
+              margin: 5px 0 0;
             }
           }
         }
       }
     }
   }
-  @media (min-width: 568px) and (max-width: 823px) and (min-height: 415px) and (max-height: 729px){
-
-  }
-  @media (min-width: 568px) and (max-width: 823px) and (min-height: 730px){
+  @media (min-width: 568px) and (max-width: 823px) and (max-height: 519px){
     .container-fluid {
-      .wrapper {
-        padding-top: 150px;
-        .menu {
-          top: 40%;
+      font-size: 70%;
+      .wrapper{
+        padding-top: 50px;
+        .menu{
+          height: 30vh;
+          top: 50%;
+          margin-top: -15vh;
+          left: 1%;
           div{
-            &.active {
-              .desc {
-                line-height: 14px;
-              }
+            margin: 25px auto;
+            .desc{
+              white-space: normal;
+              margin: 5px 0 0;
             }
           }
         }
       }
     }
   }
-  @media (min-width: 824px) and (max-width: 1366px){
+
+  /*tablets*/
+  @media (min-width: 568px) and (max-width: 1024px) and (min-height: 520px) and (max-height: 1365px){
+    .container-fluid {
+      font-size: 90%;
+      .wrapper{
+        padding-top: 15vh;
+        .menu{
+          height: 30vh;
+          top: 50vh;
+          margin-top: -15vh;
+          left: 1%;
+          div{
+            margin: 22px auto;
+            &.active{
+              & .desc{
+                opacity: 1;
+                font-size: .8em;
+                line-height: 1.2em;
+              }
+            }
+            .desc{
+              white-space: normal;
+              margin: 5px 10px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 568px) and (max-width: 1024px) and (min-height: 1365px){
+    .container-fluid {
+      font-size: 100%;
+      .wrapper{
+        padding-top: 15vh;
+        .menu{
+          width: 70px;
+          height: 30vh;
+          top: 50%;
+          margin-top: -15vh;
+          left: 2%;
+          div{
+            width: 45px;
+            margin: 25px auto;
+            &:hover{
+              width: 70px;
+              & .desc{
+                display: none;
+              }
+              & .link{
+                width: 70px;
+              }
+            }
+            &.active{
+              width: 70px;
+              & .desc{
+                display: none;
+              }
+              & .link{
+                width: 70px;
+              }
+            }
+            .link{
+              width: 45px;
+            }
+            .desc{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1025px) and (max-width: 1366px){
     .container-fluid {
       .wrapper{
-        padding-top: 140px;
+        padding-top: 15vh;
         .menu{
+          width: 50px;
+          height: 30vh;
+          top: 50vh;
+          margin-top: -15vh;
+          left: 3%;
           div{
+            &.active{
+              & .desc{
+                opacity: 1;
+                font-size: 1em;
+                line-height: 1.5em;
+              }
+            }
             .desc{
+              width: 160px;
+              white-space: normal;
               margin: 10px 0 0;
-              width: 150px;
+              opacity: 0;
+              transition: all .5s ease-in-out;
             }
           }
         }
