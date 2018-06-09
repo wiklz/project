@@ -344,7 +344,7 @@ import loc from '~/components/stroi/loc.vue';
       }
     }
   }
-  @media (min-width: 1025px) and (max-width: 1366px){
+  @media (min-width: 1025px) and (max-width: 1440px){
     .container-fluid {
       .wrapper{
         padding-top: 15vh;

@@ -170,7 +170,7 @@
 }
 
 /*tablets*/
-@media (min-width: 1025px) and (max-width: 1366px){
+@media (min-width: 1025px) and (max-width: 1440px){
   .slider-wrapper{
     .gallerycarousel{
       .carousel.slide{

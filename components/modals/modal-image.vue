@@ -90,7 +90,7 @@
     }
   }
 }
-@media (min-width: 1025px) and (max-width: 1366px){
+@media (min-width: 1025px) and (max-width: 1440px){
   .wrapper{
     .image-holder{
       width: 90vw;
